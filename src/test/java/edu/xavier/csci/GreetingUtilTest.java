@@ -3,27 +3,32 @@
  */
 package edu.xavier.csci;
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class AppTest {
+public class GreetingUtilTest {
+    GreetingUtil classUnderTest;
+
+    @Before
+    public void setup() {
+        classUnderTest = new GreetingUtil();
+    }
+
     @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
+
         assertNotNull("app should have a greeting",
                 classUnderTest.getGreeting(""));
 
     }
 
     @Test public void testThatYouCanPassNothingIn() {
-        App classUnderTest = new App();
         assertNotNull("app should have a greeting",
                 classUnderTest.getGreeting(""));
 
         assertEquals("Hello", classUnderTest.getGreeting(""));
     }
     @Test public void testThatYouCanPassASingleValue() {
-        App classUnderTest = new App();
-
 
         assertEquals("This should have had Dan at the end of the string",
                 "Hello Dan", classUnderTest.getGreeting("Dan"));

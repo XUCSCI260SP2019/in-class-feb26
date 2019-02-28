@@ -5,7 +5,12 @@ package edu.xavier.csci;
 
 public class App {
     public String getGreeting(String name) {
-        return "Hello " + name;
+
+        if("".equals(name)) {
+            return "Hello";
+        } else {
+            return "Hello " + name;
+        }
     }
 
     public static void main(String[] args) {

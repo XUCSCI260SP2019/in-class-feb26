@@ -11,10 +11,21 @@ public class AppTest {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting",
                 classUnderTest.getGreeting(""));
-      //  fail();
+
     }
 
-    @Test public void passingTest() {
+    @Test public void testThatYouCanPassNothingIn() {
+        App classUnderTest = new App();
+        assertNotNull("app should have a greeting",
+                classUnderTest.getGreeting(""));
 
+        assertEquals("Hello", classUnderTest.getGreeting(""));
+    }
+    @Test public void testThatYouCanPassASingleValue() {
+        App classUnderTest = new App();
+
+
+        assertEquals("This should have had Dan at the end of the string",
+                "Hello Dan", classUnderTest.getGreeting("Dan"));
     }
 }

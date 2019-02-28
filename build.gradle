@@ -28,5 +28,12 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
+
 // Define the main class for the application
 mainClassName = 'edu.xavier.csci.App'
+
+jar {
+    manifest {
+        attributes "Main-Class": mainClassName
+    }
+}

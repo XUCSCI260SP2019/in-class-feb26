@@ -8,8 +8,12 @@
 
 plugins {
     // Apply the java plugin to add support for Java
-    id 'java'
+    id 'java-library'
+    id 'maven-publish'
 }
+
+group = 'edu.xavier.csci'
+version = '0.0.1'
 
 repositories {
     // Use jcenter for resolving your dependencies.
@@ -25,4 +29,12 @@ dependencies {
     implementation 'org.dentinger:sample-java-lib:1.0'
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+}
+
+publishing {
+    publications {
+        myLibrary(MavenPublication) {
+            from components.java
+        }
+    }
 }
